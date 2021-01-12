@@ -6,6 +6,7 @@ echo "pulling the code"
 }
 stage('compile')
 {
- sh 'mvn package'
+ def Home=tool name: 'maven-1', type: 'maven'
+ sh "${Home}/bin/mvn package"
 }
 }
